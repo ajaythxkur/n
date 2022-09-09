@@ -1,7 +1,7 @@
 import  Sequelize  from 'sequelize';
-import  { Model }  from '../Database/sequelize';
+import  { Model }  from '../Database/sequelize.js';
 
-const UserModel = Model.define('users', {
+export const UserModel = Model.define('users', {
     // Model attributes are defined here
     username: {
       type: Sequelize.STRING,
@@ -18,6 +18,8 @@ const UserModel = Model.define('users', {
     gender:{
         type: Sequelize.STRING
     }
+    
   });
 
-  await User.sync();
+
+  await UserModel.sync();
